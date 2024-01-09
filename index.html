@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="root">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+
+</html>
+<script type="text/babel">
+    let root = document.querySelector('#root');
+    let props={
+        width:'100%',
+        // height:'500px',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        border:"1px solid red",
+        backgroundColor:'#FFE4C4',
+        padding:"20px"
+       
+    }
+    let childprops={
+        width:'200px',
+        height:'300px',
+        border:"1px solid red",
+        backgroundColor:"red",
+        fontSize:'30px',
+        marginRight:'20px',
+    }
+    let childprop={
+        width:'200px',
+        height:'300px',
+        border:"1px solid red",
+        backgroundColor:"green",
+        fontSize:'30px',
+        marginRight:'20px',
+    }
+    let childbox={
+        width:'200px',
+        height:'300px',
+        border:"1px solid red",
+        backgroundColor:"yellow",
+        fontSize:'30px',
+        marginRight:'20px',
+    }
+    let childbox1={
+        width:'200px',
+        height:'300px',
+        border:"1px solid red",
+        backgroundColor:"#800080",
+        fontSize:'30px',
+        marginRight:'20px',
+    }
+    let data=(
+        <div>
+            <h1>hello</h1>
+            </div>
+    )
+    let rootElement = ReactDOM.createRoot(root);
+    let flex=React.createElement("div",{id:"parent",style:props},[
+    React.createElement('div',{class:"box",style:childprops},1),
+    React.createElement('div',{class:"box",style:childprop},2),
+    React.createElement('div',{class:"box",style:childbox},3),
+    React.createElement('div',{class:"box",style:childbox1},4) 
+    ])
+//     let par=document.querySelector('#parent')
+//     let parElement=ReactDOM.createRoot(par)
+//    let data=<h1>hello</h1>
+ 
+    rootElement.render(flex)
+</script>
